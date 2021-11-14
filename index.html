@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/normalize.css@^7.0.0" rel="stylesheet" />
+    <!-- Blueprint stylesheets -->
+    <link href="https://unpkg.com/@blueprintjs/icons@^3.4.0/lib/css/blueprint-icons.css" rel="stylesheet" />
+    <link href="https://unpkg.com/@blueprintjs/core@^3.10.0/lib/css/blueprint.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet"/>
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <div>
+        <h1>Mortgage Calculator</h1>
+ <div  class="container">
+
+        <div class="bp3-card .modifier bp3-elevation-1">
+           Change values to calculate your results
+
+          <div class="divider"></div>
+
+          <div class="bp3-form-group .modifier">
+            <label class="bp3-label" for="form-group-input">
+              Years of mortgage
+            </label>
+            <div class="bp3-form-content">
+              <div class="bp3-input-group .modifier">
+                <div class="slidecontainer">
+                    <div class="range">1</div>
+                    <input type="range" min="1" max="40" value="30" class="slider" id="years">
+                    <div class="range">40</div>
+                    <input id="yearShow" placeholder="30"/>
+                  </div>
+               
+              </div>
+            </div>
+          </div>
+
+          <div class="bp3-form-group .modifier">
+            <label class="bp3-label" for="form-group-input">
+              Rate of interest (%)
+            </label>
+            <div class="bp3-form-content">
+              <div class="bp3-input-group .modifier">
+                <div class="slidecontainer">
+                    <div class="range">0.1</div>
+                    <input type="range" min="0.1" max="10" value="1.8" class="slider" id="rate">
+                    <div class="range">10</div>
+                    <input id="rateShow" placeholder="1.8"/>
+                  </div>
+               
+              </div>
+            </div>
+          </div>
+
+
+          <div class="bp3-form-group .modifier">
+            <label class="bp3-label" for="loan">
+              Loan Amount
+            </label>
+            <div class="bp3-form-content">
+              <div class="bp3-input-group .modifier">
+                <span class="bp3-icon bp3-icon-dollar"></span>
+                <input  id="loan" type="text" :modifier class="bp3-input loan-amount"
+                       style="width: 200px;"  dir="auto" />
+              </div>
+              <div  id="loan-error" style="display: none;" class="bp3-form-helper-text">Please enter a value</div>
+            </div>
+          </div>
+
+
+          <div class="annual">
+            <div class="bp3-form-group .modifier">
+                <label class="bp3-label" for="tax">
+                  Annual Tax
+                </label>
+                <div class="bp3-form-content">
+                  <div class="bp3-input-group .modifier">
+                    <span class="bp3-icon bp3-icon-dollar"></span>
+                    <input id="tax" type="text" :modifier class="bp3-input"
+                           style="width: 200px;"  dir="auto" />
+                  </div>
+                  <div id="tax-error" style="display: none;" class="bp3-form-helper-text">Please enter a value</div>
+                </div>
+              </div>
+              <div class="bp3-form-group .modifier">
+                <label class="bp3-label" for="insurance">
+                  Annual Insurance
+                </label>
+                <div class="bp3-form-content">
+                  <div class="bp3-input-group .modifier">
+                    <span class="bp3-icon bp3-icon-dollar"></span>
+                    <input id="insurance" type="text" :modifier class="bp3-input"
+                           style="width: 200px;"  dir="auto" />
+                  </div>
+                  <div id="insurance-error" style="display: none;" class="bp3-form-helper-text">Please enter a value</div>
+                </div>
+              </div>
+          </div>
+
+          <button id="button">Calculate</button>
+
+
+          </div>
+
+          <div class="bp3-card .modifier bp3-elevation-1 second">
+              <h2>Your results</h2>
+              <p>Principal & Interest</p>
+              <h2 id="principalRes">$ 45</h2>
+              <p>Tax</p>
+              <h2 id="taxRes">$ 54</h2>
+              <p>Insurance</p>
+              <h2 id="insuranceRes">$ 56</h2>
+
+              <p>Total Monthly Payment</p>
+              <h2 id="total">$ 4545</h2>              
+          </div>
+        </div>
+
+    </div>
+  
+    <script src="script.js"></script>
+</body>
+</html>
